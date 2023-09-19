@@ -18,8 +18,9 @@
     <string name="LenguajeCSharp">C #</string>
     <string name="buttonEnviar">Enviar</string>
     <string name="buttonLimpiar">Limpiar</string>
-    <string name="defaultDate">Fecha de Naciemiento</string>
+    <string name="defaultDate">Fecha de Nacimiento</string>
     <array name="spinnerGenero">
+        <item>Genero</item>
         <item>Masculino</item>
         <item>Femenino</item>
     </array>
