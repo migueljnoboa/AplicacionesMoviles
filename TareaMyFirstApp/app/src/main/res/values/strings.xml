@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">My First App</string>
+    <string name="inputNombre">Digite un nombre</string>
+    <string name="inputApellido">Digite un apellido</string>
+    <string name="textGenero">Genero:</string>
+    <string name="generoMasculino">Masculino</string>
+    <string name="generoFemenino">Femenino</string>
+    <string name="textNacimiento">Nacimiento:</string>
+    <string name="textProgramacion">Le gusta programar?</string>
+    <string name="radioSi">Si</string>
+    <string name="radioNo">No</string>
+    <string name="textLenguaje">Lenguaje:</string>
+    <string name="lenguajeJava">Java</string>
+    <string name="lenguajePython">Python</string>
+    <string name="lenguajeJS">JS</string>
+    <string name="LenguajeGo">Go Lang</string>
+    <string name="lenguajeC">C/C++</string>
+    <string name="LenguajeCSharp">C #</string>
+    <string name="buttonEnviar">Enviar</string>
+    <string name="buttonLimpiar">Limpiar</string>
+    <string name="defaultDate">Fecha de Naciemiento</string>
+    <array name="spinnerGenero">
+        <item>Masculino</item>
+        <item>Femenino</item>
+    </array>
+</resources>
