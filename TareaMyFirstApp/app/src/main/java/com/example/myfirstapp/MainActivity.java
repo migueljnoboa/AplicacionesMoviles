@@ -2,6 +2,7 @@ package com.example.myfirstapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.util.Xml;
@@ -16,8 +17,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText inputNombre = (EditText) findViewById(R.id.inputNombre);
-    private EditText inputApellido = (EditText) findViewById(R.id.inputApellido);
+    public static final String RESPONSE1 = "com.example.myfirstapp.RESPONSE1";
+    public static final String RESPONSE2 = "com.example.myfirstapp.RESPONSE2";
+    public static final String RESPONSE3 = "com.example.myfirstapp.RESPONSE3";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +37,73 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        String linea = "Hola!, mi nombre es: " + inputNombre.getText().toString() + " " + inputApellido.getText().toString();
+        Intent intent = createIntentResponse();
 
-        setContentView(R.layout.activity_response);
+        startActivity(intent);
 
+    }
+
+    private Intent createIntentResponse() {
+
+        Intent intent = new Intent(this, ResponseActivity.class);
+
+        // Creating Response 1
+        EditText inputNombre = (EditText) findViewById(R.id.inputNombre);
+        EditText inputApellido = (EditText) findViewById(R.id.inputApellido);
+
+        String response1 = "Hola!, mi nombre es: " + inputNombre.getText().toString() + " " + inputApellido.getText().toString() + ".";
+
+        // Creating Response 2
+        Spinner spinnerGenero = (Spinner) findViewById(R.id.spinnerGenero);
+        Button buttonNacimiento = (Button) findViewById(R.id.buttonNacimiento);
+
+        String response2 = "Soy " + spinnerGenero.getSelectedItem().toString() + ", y naci en fecha " + buttonNacimiento.getText().toString() + ".";
+
+        // Creating Response 3
+        String response3 = "";
+        RadioButton radioNo = (RadioButton) findViewById(R.id.radioNo);
+        CheckBox java = (CheckBox) findViewById(R.id.checkJava);
+        CheckBox python = (CheckBox) findViewById(R.id.checkPython);
+        CheckBox JS = (CheckBox) findViewById(R.id.checkJS);
+        CheckBox Go = (CheckBox) findViewById(R.id.checkGo);
+        CheckBox C = (CheckBox) findViewById(R.id.checkC);
+        CheckBox CSharp = (CheckBox) findViewById(R.id.checkCSharp);
+
+        if (radioNo.isChecked()){
+            response3 = "No me gusta programar.";
+        }else {
+            response3 = "Me gusta programar.";
+
+            if (java.isChecked() || python.isChecked() || JS.isChecked() || Go.isChecked() || C.isChecked() || CSharp.isChecked()){
+                response3 += " Mis lenguajes favoritos son:";
+                if (java.isChecked()){
+                    response3 += " Java,";
+                }
+                if (python.isChecked()){
+                    response3 += " Python,";
+                }
+                if (JS.isChecked()){
+                    response3 += " JS,";
+                }
+                if (Go.isChecked()){
+                    response3 += " Go lang,";
+                }
+                if (C.isChecked()){
+                    response3 += " C/C++,";
+                }
+                if (CSharp.isChecked()){
+                    response3 += " C #,";
+                }
+                response3 += ".";
+            }
+        }
+
+        // Add responses to intense
+        intent.putExtra(RESPONSE1, response1);
+        intent.putExtra(RESPONSE2, response2);
+        intent.putExtra(RESPONSE3, response3);
+
+        return intent;
     }
 
     // Verify the all the data makes sence before sending the form
@@ -67,11 +132,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Check if a Date for Nacimiento has been picked or if its default
-        Button buttonNacimiento = (Button) findViewById(R.id.buttonNacimiento);
+        /*Button buttonNacimiento = (Button) findViewById(R.id.buttonNacimiento);
         if (buttonNacimiento.getText().toString().equalsIgnoreCase("Fecha de Nacimiento")){
             //TODO: add dialog for Nacimiento
             return false;
-        }
+        }*/
 
         // Check if "Le Gusta Programar" is set Right
         CheckBox java = (CheckBox) findViewById(R.id.checkJava);

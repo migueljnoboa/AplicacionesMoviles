@@ -22,6 +22,6 @@
     <array name="spinnerGenero">
         <item>Genero</item>
         <item>Masculino</item>
-        <item>Femenino</item>
+        <item>Femenina</item>
     </array>
 </resources>
