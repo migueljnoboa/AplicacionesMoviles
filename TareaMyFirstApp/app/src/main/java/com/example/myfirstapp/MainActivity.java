@@ -12,8 +12,12 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private EditText inputNombre = (EditText) findViewById(R.id.inputNombre);
+    private EditText inputApellido = (EditText) findViewById(R.id.inputApellido);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,14 +26,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openDatePicker(View view) {
-
+        // TODO: open DatePicker
     }
 
+    // send the information from activity_main to activity_response and activate activity_response
     public void sendForm(View view) {
-        if (checkForm()){
-
+        if (!checkForm()){
             return;
         }
+
+        String linea = "Hola!, mi nombre es: " + inputNombre.getText().toString() + " " + inputApellido.getText().toString();
+
+        setContentView(R.layout.activity_response);
+
     }
 
     // Verify the all the data makes sence before sending the form
