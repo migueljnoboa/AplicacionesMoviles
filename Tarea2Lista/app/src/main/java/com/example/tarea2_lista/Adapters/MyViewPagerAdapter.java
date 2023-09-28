@@ -1,4 +1,4 @@
-package com.example.tarea2_lista;
+package com.example.tarea2_lista.Adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

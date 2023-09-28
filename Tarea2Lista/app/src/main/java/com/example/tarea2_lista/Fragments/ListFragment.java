@@ -7,18 +7,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.tarea2_lista.ListItem;
-import com.example.tarea2_lista.ListItemAdapter;
+import com.example.tarea2_lista.Adapters.ListItemAdapter;
 import com.example.tarea2_lista.R;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.

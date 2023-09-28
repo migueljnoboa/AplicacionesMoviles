@@ -1,4 +1,4 @@
-package com.example.tarea2_lista;
+package com.example.tarea2_lista.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;

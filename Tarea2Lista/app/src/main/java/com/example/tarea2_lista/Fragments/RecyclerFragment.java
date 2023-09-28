@@ -3,6 +3,7 @@ package com.example.tarea2_lista.Fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -10,12 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ListView;
+import android.widget.Toast;
 
+import com.example.tarea2_lista.Adapters.RecyclerAdapterTest;
 import com.example.tarea2_lista.ListItem;
-import com.example.tarea2_lista.ListItemAdapter;
 import com.example.tarea2_lista.R;
-import com.example.tarea2_lista.RecyclerItemAdapter;
+import com.example.tarea2_lista.Adapters.RecyclerItemAdapter;
 
 import java.util.ArrayList;
 
@@ -79,7 +80,12 @@ public class RecyclerFragment extends Fragment {
 
         editAddTask = view.findViewById(R.id.editAddText);
         buttonAdd = view.findViewById(R.id.addButton);
-        recyclerView = view.findViewById(R.id.listView);
+        recyclerView = view.findViewById(R.id.recyclerView);
+
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
+        RecyclerAdapterTest adapter = new RecyclerAdapterTest(arraytasks);
+        recyclerView.setAdapter(adapter);
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,12 +94,11 @@ public class RecyclerFragment extends Fragment {
                 if (!text.equalsIgnoreCase("")){
                     arraytasks.add(new ListItem(text));
                     editAddTask.setText("");
+                    adapter.notifyItemInserted(arraytasks.size()-1);
                 }
             }
         });
 
-        recyclerItemAdapter = new RecyclerItemAdapter(arraytasks);
-        recyclerView.setAdapter(recyclerItemAdapter);
 
         // Inflate the layout for this fragment
         return view;

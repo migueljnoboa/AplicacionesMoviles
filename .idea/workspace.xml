@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1808c81-a357-4241-b05a-b61230a40cb1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/TareaMyFirstApp/app/src/main/java/com/example/myfirstapp/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/TareaMyFirstApp/app/src/main/java/com/example/myfirstapp/MainActivity.java" afterDir="false" />
-    </list>
+    <list default="true" id="e1808c81-a357-4241-b05a-b61230a40cb1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +31,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
-    "cidr.known.project.marker": "true"
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "C:/Users/Miguel/AndroidStudioProjects/AplicacionesMoviles/Tarea2Lista"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -46,5 +45,16 @@
       <updated>1695146041396</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
