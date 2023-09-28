@@ -83,7 +83,7 @@ public class RecyclerFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerView);
 
         recyclerView.setHasFixedSize(false);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
+        recyclerView.setLayoutManager(new GridLayoutManager(view.getContext(), 1));
         RecyclerAdapterTest adapter = new RecyclerAdapterTest(arraytasks);
         recyclerView.setAdapter(adapter);
 
