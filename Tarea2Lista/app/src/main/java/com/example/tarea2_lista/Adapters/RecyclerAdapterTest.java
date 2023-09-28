@@ -36,6 +36,13 @@ public class RecyclerAdapterTest extends RecyclerView.Adapter<RecyclerAdapterTes
     public void onBindViewHolder(@NonNull RecyclerAdapterTest.TaskViewHolder holder, int position) {
 
         holder.getTextView().setText(tasks.get(position).getText());
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tasks.remove(position);
+                notifyItemRemoved(position);
+            }
+        });
     }
 
     @Override

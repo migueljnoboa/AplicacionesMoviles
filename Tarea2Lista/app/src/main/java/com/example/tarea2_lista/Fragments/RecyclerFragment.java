@@ -82,7 +82,7 @@ public class RecyclerFragment extends Fragment {
         buttonAdd = view.findViewById(R.id.addButton);
         recyclerView = view.findViewById(R.id.recyclerView);
 
-        recyclerView.setHasFixedSize(true);
+        recyclerView.setHasFixedSize(false);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
         RecyclerAdapterTest adapter = new RecyclerAdapterTest(arraytasks);
         recyclerView.setAdapter(adapter);
