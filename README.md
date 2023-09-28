@@ -10,7 +10,7 @@ El Main siempre estara vacio, por favor ver los diferentes branches para las dif
 
 Tarea My First App:  First App
 
-Tarea 2: Listas List View y Recycler View
+Tarea Listas List View y Recycler View: Tarea2
 
 # Tarea 2: List View y Recycler View
 
