@@ -3,12 +3,21 @@ package com.example.tarea2_lista.Fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ListView;
 
+import com.example.tarea2_lista.ListItem;
+import com.example.tarea2_lista.ListItemAdapter;
 import com.example.tarea2_lista.R;
+import com.example.tarea2_lista.RecyclerItemAdapter;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +34,12 @@ public class RecyclerFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private View view;
+    private EditText editAddTask;
+    private ImageButton buttonAdd;
+    private RecyclerView recyclerView;
+    private RecyclerItemAdapter recyclerItemAdapter;
+    private ArrayList<ListItem> arraytasks = new ArrayList<>();
 
     public RecyclerFragment() {
         // Required empty public constructor
@@ -58,9 +73,31 @@ public class RecyclerFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        view = inflater.inflate(R.layout.fragment_recycler, container, false);
+
+        editAddTask = view.findViewById(R.id.editAddText);
+        buttonAdd = view.findViewById(R.id.addButton);
+        recyclerView = view.findViewById(R.id.listView);
+
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = editAddTask.getText().toString();
+                if (!text.equalsIgnoreCase("")){
+                    arraytasks.add(new ListItem(text));
+                    editAddTask.setText("");
+                }
+            }
+        });
+
+        recyclerItemAdapter = new RecyclerItemAdapter(arraytasks);
+        recyclerView.setAdapter(recyclerItemAdapter);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_recycler, container, false);
+        return view;
+
+
     }
 }
