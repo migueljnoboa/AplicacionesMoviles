@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Tarea3Room</string>
     <string name="addTaskBtn">Agregar Tarea</string>
+    <string name="regresar">Regresar</string>
+    <string name="guardar">Guardar</string>
+    <string name="agregar_task">Agregar Task</string>
+    <string name="textTaskDefault">task</string>
 </resources>
