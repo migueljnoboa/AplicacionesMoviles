@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Tarea3Room</string>
+    <string name="addTaskBtn">Agregar Tarea</string>
+</resources>
