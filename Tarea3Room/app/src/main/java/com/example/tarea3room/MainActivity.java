@@ -1,6 +1,7 @@
 package com.example.tarea3room;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Database;
 import androidx.room.Room;
 
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TaskDao taskDao;
     private Button btnAddTask;
-    private ListView listView;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         taskDao = TaskDatabase.getInstance(getApplicationContext()).getDb().taskDao();
         btnAddTask = findViewById(R.id.addTaskBtn);
-        listView = findViewById(R.id.listView);
+        recyclerView = findViewById(R.id.recyclerView);
 
         //TODO: Apply Live Data
 

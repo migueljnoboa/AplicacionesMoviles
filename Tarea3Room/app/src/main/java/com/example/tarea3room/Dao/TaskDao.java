@@ -1,5 +1,6 @@
 package com.example.tarea3room.Dao;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -14,10 +15,10 @@ import java.util.List;
 public interface TaskDao {
 
     @Query("Select * FROM task")
-    List<Task> getAll();
+    LiveData<List<Task>> getAll();
 
     @Query("Select * FROM task WHERE id = :id")
-    Task getById(int id);
+    LiveData<Task> getById(int id);
 
     @Insert
     void insert(Task task);
